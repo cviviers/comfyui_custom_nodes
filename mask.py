@@ -624,6 +624,7 @@ class TransitionMask:
 MASK_CLASS_MAPPINGS = {
     "MaskBlur+": MaskBlur,
     "MaskBoundingBox+": MaskBoundingBox,
+    "SafeMaskBoundingBox": MaskBoundingBoxWithTests,
     "MaskFix+": MaskFix,
     "MaskFlip+": MaskFlip,
     "MaskFromColor+": MaskFromColor,
@@ -650,6 +651,7 @@ MASK_NAME_MAPPINGS = {
     "MaskFromSegmentation+": "🔧 Mask From Segmentation",
     "MaskPreview+": "🔧 Mask Preview",
     "MaskBoundingBox+": "🔧 Mask Bounding Box",
+    "SafeMaskBoundingBox": "🔧 Safe Mask Bounding Box",
     "MaskSmooth+": "🔧 Mask Smooth",
     "TransitionMask+": "🔧 Transition Mask",
 
