@@ -192,7 +192,7 @@ class MaskBoundingBox:
 
         return (mask, image_optional, x1, y1, x2 - x1, y2 - y1)
     
-class MaskBoundingBoxWithTests:
+class SafeMaskBoundingBox:
     @classmethod
     def INPUT_TYPES(s):
         return {
@@ -624,7 +624,7 @@ class TransitionMask:
 MASK_CLASS_MAPPINGS = {
     "MaskBlur+": MaskBlur,
     "MaskBoundingBox+": MaskBoundingBox,
-    "SafeMaskBoundingBox": MaskBoundingBoxWithTests,
+    "SafeMaskBoundingBox+": SafeMaskBoundingBox,
     "MaskFix+": MaskFix,
     "MaskFlip+": MaskFlip,
     "MaskFromColor+": MaskFromColor,
@@ -651,7 +651,7 @@ MASK_NAME_MAPPINGS = {
     "MaskFromSegmentation+": "🔧 Mask From Segmentation",
     "MaskPreview+": "🔧 Mask Preview",
     "MaskBoundingBox+": "🔧 Mask Bounding Box",
-    "SafeMaskBoundingBox": "🔧 Safe Mask Bounding Box",
+    "SafeMaskBoundingBox+": "🔧 Safe Mask Bounding Box",
     "MaskSmooth+": "🔧 Mask Smooth",
     "TransitionMask+": "🔧 Transition Mask",
 
