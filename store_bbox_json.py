@@ -46,6 +46,10 @@ class SaveBBoxAsJSON:
         
         return (image,)  # pass the image right back out
 
-NODE_CLASS_MAPPINGS = {
+JSON_CLASS_MAPPINGS = {
     "SaveBBoxAsJSON": SaveBBoxAsJSON
+}
+
+JSON_NAME_MAPPINGS = {
+    "SaveBBoxAsJSON": "🔧 Save BBox as JSON"
 }
