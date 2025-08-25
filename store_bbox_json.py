@@ -10,11 +10,12 @@ class SaveBBoxAsJSON:
         return {
             "required": {
                 "image":    ("IMAGE",),                   # the image to pass through
+                "class": ("STRING", {"default": "object"}),
                 "x":    ("INT", {"default": 0}),
                 "y":    ("INT", {"default": 0}),
                 "width": ("INT", {"default": 0}),
                 "height": ("INT", {"default": 0}),
-                "filename": ("STRING", {"default": "bounding_box.json"}),
+                "filename": ("STRING", {"default": "image_xx.json"}),
                 "directory":("STRING", {"default": "./bbox_data"})
             }
         }
@@ -24,13 +25,14 @@ class SaveBBoxAsJSON:
     FUNCTION = "save_json"
     CATEGORY = "utils"
 
-    def save_json(self, image, x, y, width, height, filename, directory):
-        print(f"Received the following params: x={x}, y={y}, width={width}, height={height}, filename={filename}, directory={directory}")
+    def save_json(self, image, x, y, width, height, filename, object_class, directory):
+        print(f"Received the following params: x={x}, y={y}, width={width}, height={height}, class={object_class}, filename={filename}, directory={directory}")
         # if Tensor, convert to Python number
         def to_num(v):
             return v.item() if isinstance(v, torch.Tensor) else v
 
         bbox_data = {
+            "class":  object_class,
             "x":      to_num(x),
             "y":      to_num(y),
             "width":  to_num(width),
