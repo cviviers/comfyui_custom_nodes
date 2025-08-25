@@ -10,13 +10,13 @@ class SaveBBoxAsJSON:
         return {
             "required": {
                 "image":    ("IMAGE",),                   # the image to pass through
-                "class": ("STRING", {"default": "object"}),
+                "object_class": ("STRING", {"default": "object"}),
                 "x":    ("INT", {"default": 0}),
                 "y":    ("INT", {"default": 0}),
                 "width": ("INT", {"default": 0}),
                 "height": ("INT", {"default": 0}),
                 "filename": ("STRING", {"default": "image_xx.json"}),
-                "directory":("STRING", {"default": "./bbox_data"})
+                "directory":("STRING", {"default": "./output/annotations"}),
             }
         }
 
